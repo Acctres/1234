@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>林世益 & 古義璇的婚禮 | Wedding Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <style>
+    /* 動畫效果 */
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #f8f8f8, #fff);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .countdown {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #d4af37;
+    }
+    .gold {
+      color: #d4af37;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+    }
+    footer {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-music" loop autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2022/08/04/audio_657e02ae75.mp3?filename=wedding-vows-116190.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio autoplay loop hidden>
+    <source src="https://cdn.pixabay.com/download/audio/2022/08/04/audio_657e02ae75.mp3?filename=wedding-vows-116190.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <header class="fade-in">
+    <h1>林世益 & 古義璇</h1>
+    <p>邀請您參加我們的婚禮</p>
+    <p>You're invited to our wedding</p>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <section class="fade-in">
+    <div class="card">
+      <h2>婚禮資訊 | Wedding Details</h2>
+      <p><strong>時間 | Time：</strong> 2025年6月14日 晚上18:00</p>
+      <p><strong>地點 | Venue：</strong> 235新北市中和區中正路631號</p>
+    </div>
+
+    <div class="card">
+      <h2>地圖 | Map</h2>
+      <iframe
+        src="https://www.google.com/maps?q=235%E6%96%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%92%8C%E5%8D%80%E4%B8%AD%E6%AD%A3%E8%B7%AF631%E8%99%9F&output=embed">
+      </iframe>
+    </div>
+
+    <div class="card">
+      <h2>出席回覆 | RSVP</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdWes1kLH6becyP3s5U_hV18peyL5H1fOZaJ621tb4uOw7PsQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 林世益 & 古義璇 | Wedding Invitation<br>
+    Made with love 💛
+  </footer>
+
+  <script>
+    // 倒數計時
+    const weddingDate = new Date("2025-06-14T18:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        countdownEl.innerHTML = "婚禮已開始！The wedding has begun!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      
+      countdownEl.innerHTML = `倒數 ${days} 天 ${hours} 小時 ${minutes} 分鐘`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+  </script>
+</body>
+</html>
