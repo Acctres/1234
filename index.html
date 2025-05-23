@@ -1,118 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>林世益 & 古義璇 的婚禮邀請函</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap" rel="stylesheet">
+  <title>林世益 & 古義璇 婚禮邀請</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Noto+Sans+TC&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans TC', sans-serif;
-      background: linear-gradient(to bottom, #fef9f4, #f7eadb);
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      background-repeat: repeat;
-      color: #333;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { font-family: 'Noto Sans TC', sans-serif; background: #fdfaf6; color: #333; scroll-behavior: smooth; }
+    .hero {
+  background: url('cover.jpg') no-repeat top center;
+  background-size: contain;
+  background-color: #fdfaf6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 60px;
+}
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
     }
-    header {
-      text-align: center;
-      padding: 80px 20px 20px;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3em;
-      color: #b67c3d;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2em;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 15px;
-      padding: 30px;
-      margin: 20px 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 12px;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #aaa;
-      padding: 30px 10px;
-    }
-    .petal {
-      position: fixed;
-      top: -60px;
-      width: 32px;
-      height: 32px;
-      background-image: url('https://cdn.pixabay.com/photo/2017/03/18/14/16/cherry-blossom-2156142_960_720.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      pointer-events: none;
-      animation: fall linear infinite;
-      z-index: 1000;
-      opacity: 0.8;
-    }
-    @keyframes fall {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3em; z-index: 1; text-align: center; padding: 0 10px; }
+    .hero p { font-size: 1.2em; margin-top: 10px; z-index: 1; }
+    #countdown { margin-top: 20px; font-size: 1.1em; color: #ffd; z-index: 1; }
+    section { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+    h2 { text-align: center; font-family: 'Playfair Display', serif; font-size: 2em; margin-bottom: 20px; color: #b7893f; }
+    p { font-size: 1.1em; line-height: 1.8; text-align: center; margin-bottom: 20px; }
+    iframe { display: block; margin: 0 auto; border: none; width: 100%; max-width: 100%; border-radius: 12px; height: 400px; }
+    footer { text-align: center; padding: 40px 20px; font-size: 0.9em; color: #aaa; }
   </style>
 </head>
 <body>
-  <audio id="bg-music" autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/01/26/audio_1dba758ed8.mp3?filename=wedding-piano-romantic-soft-135788.mp3" type="audio/mpeg">
-  </audio>
+  <div class="hero">
+    <h1>林世益<br>&<br>古義璇</h1>
+    <p>邀請您一同見證我們的幸福時刻</p>
+    
+<div id="countdown-wrapper" style="z-index:999; position: relative; margin-top: 20px;">
+  <div id="countdown" style="font-size: 1.6em; font-weight: bold; color: #fffbe8;
+    background: rgba(0,0,0,0.6); padding: 12px 24px; border-radius: 12px;
+    display:inline-block; position: relative;">
+  </div>
+</div>
 
-  <header>
-    <h1>林世益 & 古義璇</h1>
-    <p>誠摯邀請您一同見證我們的幸福時刻</p>
-  </header>
-
-  <div class="container">
-    <div class="card">
-      <h2>🗕️ 婚禮資訊</h2>
-      <p><strong>日期：</strong>2025 年 6 月 14 日（六）</p>
-      <p><strong>時間：</strong>下午 6 點</p>
-      <p><strong>地點：</strong>瓏山林台北中和飯店<br>（新北市中和區中正路 631 號）</p>
-    </div>
-    <div class="card">
-      <h2>📍 地圖</h2>
-      <iframe src="https://www.google.com/maps?q=235%E6%96%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%92%8C%E5%8D%80%E4%B8%AD%E6%AD%A3%E8%B7%AF631%E8%99%9F&output=embed"></iframe>
-    </div>
-    <div class="card">
-      <h2>📬 RSVP 回覆</h2>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdWes1kLH6becyP3s5U_hV18peyL5H1fOZaJ621tb4uOw7PsQ/viewform?embedded=true" loading="lazy">載入中…</iframe>
-    </div>
   </div>
 
-  <footer>
-    © 2025 林世益 & 古義璇｜Wedding Invitation
-  </footer>
+  <section>
+    <h2>我們的故事</h2>
+    <p>兩人的相遇，是緣分的安排；<br>兩人的相知，是時間的磨合。<br>現在，我們決定攜手共度未來的每一天。</p>
+  </section>
+
+  <section>
+    <h2>婚禮資訊</h2>
+    <p><strong>日期：</strong>2025 年 6 月 14 日（六）<br>
+       <strong>時間：</strong>晚上 6:00<br>
+       <strong>地點：</strong>瓏山林台北中和飯店<br>新北市中和區中正路 631 號</p>
+  </section>
+
+  <section>
+    <h2>地圖導航</h2>
+    <iframe src="https://www.google.com/maps?q=235新北市中和區中正路631號&output=embed"></iframe>
+  </section>
+
+  <section>
+    <h2>賓客回覆</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdWes1kLH6becyP3s5U_hV18peyL5H1fOZaJ621tb4uOw7PsQ/viewform?embedded=true"></iframe>
+  </section>
+
+  <footer>感謝您的祝福與陪伴 | © 2025 林世益 & 古義璇</footer>
 
   <script>
-    function createPetal() {
-      const petal = document.createElement('div');
-      petal.classList.add('petal');
-      petal.style.left = Math.random() * 100 + 'vw';
-      petal.style.animationDuration = 6 + Math.random() * 4 + 's';
-      petal.style.opacity = 0.5 + Math.random() * 0.5;
-      petal.style.transform = `rotate(${Math.random() * 360}deg)`;
-      document.body.appendChild(petal);
-      setTimeout(() => petal.remove(), 12000);
+    const countdownEl = document.getElementById("countdown");
+    const weddingDate = new Date("2025-06-14T18:00:00").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+      if (diff <= 0) {
+        countdownEl.innerText = "婚禮正在進行中";
+        return;
+      }
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      if (countdownEl) countdownEl.innerText = "距離婚禮還有 " + d + " 天 " + h + " 小時 " + m + " 分鐘";
     }
-    setInterval(createPetal, 250);
+    updateCountdown(); console.log("倒數計時已啟動");
+    setInterval(updateCountdown, 60000);
   </script>
 </body>
 </html>
